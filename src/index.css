@@ -32,3 +32,7 @@ body {
   background-color: #eb9f0e; 
   box-shadow: rgb(199, 108, 27) 0px 6px 0px 0px, rgba(0, 0, 0, 0.196) 0px 3px 3px;
 }
+
+.triangle {
+  background-color: url("/images/bg-tri");
+}
