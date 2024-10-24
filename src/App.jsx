@@ -5,11 +5,10 @@ import Rules from "./components/Rules";
 function App() {
   return (
     <div className="mx-auto">
-      <Header /> 
-      <Game />
-
-     
-
+      <Header />
+      <div className="w-[700px] mx-auto">
+        <Game />
+      </div>
 
       <Rules />
       {/* <img src="/images/bg-triangle.svg" alt="" />

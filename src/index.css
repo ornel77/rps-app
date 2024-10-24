@@ -34,5 +34,7 @@ body {
 }
 
 .triangle {
-  background-color: url("/images/bg-tri");
+  /* background: url("/images/bg-triangle.svg") no-repeat cover/center; */
+  background-position: 64px 65px;
+  background-size: 276px;
 }

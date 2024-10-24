@@ -20,6 +20,7 @@ export default {
       },
       backgroundImage: {
         iconContainer:"linear-gradient(0deg, #f3f3f3 0%, #dadada 98.34%)",
+        triangle: "url('/images/bg-triangle.svg')",
       }
     },
   },
