@@ -1,0 +1,1 @@
+export const CHOICES = ["scissors", "paper", "rock"]

@@ -1,22 +1,26 @@
+import { Route, Routes } from "react-router-dom";
+
 import Game from "./components/Game";
 import Header from "./components/Header";
 import Rules from "./components/Rules";
+import Choices from "./components/Choices";
+import { useState } from "react";
+import Result from "./components/Result";
 
 function App() {
+  const [myChoice, setMyChoice] = useState("");
+
   return (
     <div className="mx-auto">
       <Header />
-      <div className="w-[700px] mx-auto">
-        <Game />
+      <div className="w-[700px] mx-auto mb-6">
+        <Routes>
+          <Route path="/" element={<Game setMyChoice={setMyChoice}  />} />
+          <Route path="/choices" element={<Choices myChoice={myChoice} />} />
+          <Route path="/result" element={<Result />} />
+        </Routes>
       </div>
-
       <Rules />
-      {/* <img src="/images/bg-triangle.svg" alt="" />
-      <img src="/images/icon-close.svg" alt="" />
-      <img src="/images/icon-rock.svg" alt="" />
-      <img src="/images/icon-paper.svg" alt="" />
-      <img src="/images/icon-scissors.svg" alt="" />
-      <img src="/images/image-rules.svg" alt="" /> */}
     </div>
   );
 }
