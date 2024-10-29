@@ -9,15 +9,30 @@ import Result from "./components/Result";
 
 function App() {
   const [myChoice, setMyChoice] = useState("");
+  const [houseChoice, setHouseChoice] = useState("");
+  const [scores, setScores] = useState({myScore: 0, houseScore: 0})
+  const [hasWon, setHasWon] = useState(null)
 
   return (
     <div className="mx-auto">
-      <Header />
+      <Header scores={scores}/>
       <div className="w-[700px] mx-auto mb-6">
         <Routes>
-          <Route path="/" element={<Game setMyChoice={setMyChoice}  />} />
-          <Route path="/choices" element={<Choices myChoice={myChoice} />} />
-          <Route path="/result" element={<Result />} />
+          <Route path="/" element={<Game setMyChoice={setMyChoice} setHouseChoice={setHouseChoice} />} />
+          <Route
+            path="/choices"
+            element={
+              <Choices
+                myChoice={myChoice}
+                houseChoice={houseChoice}
+                setHouseChoice={setHouseChoice}
+              />
+            }
+          />
+          <Route
+            path="/result"
+            element={<Result myChoice={myChoice} houseChoice={houseChoice} setScore={setScores} setHasWon={setHasWon} hasWon={hasWon} />}
+          />
         </Routes>
       </div>
       <Rules />

@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  safelist: [
+    "bg-scissors", "bg-paper", "bg-rock",
+    "shadow-scissors-sd", "shadow-paper-sd", "shadow-rock-sd",
+  ],
   theme: {
     extend: {
       colors: {
