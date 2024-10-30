@@ -9,7 +9,7 @@ const Choices = ({ myChoice, houseChoice, setHouseChoice }) => {
     const houseTimeout = setTimeout(() => {
       setHouseChoice(getHouseChoice());
     }, 1000);
-    const timeOut = setTimeout(() => {
+    const timeOut = setTimeout(() => {    
       navigate("/result");
     }, 2000);
 

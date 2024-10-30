@@ -6,7 +6,7 @@ const Result = ({ myChoice, houseChoice, setHasWon, hasWon }) => {
   const navigate = useNavigate();
   useEffect(() => {
     setHasWon(rules(myChoice, houseChoice))
-    console.log(hasWon);
+    // console.log(hasWon);
   }, [])
   return (
     <div className="text-white flex justify-center gap-20 text-center items-center ">

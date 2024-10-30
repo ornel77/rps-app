@@ -4,23 +4,17 @@ export const rules = (player, houseChoice) => {
     paper: "rock",
     scissors: "paper",
   };
-//   let scorePlayer = 0;
-//   let scoreHouse = 0;
-  let winner = false
- 
 
-//   if (rules[player] === houseChoice)
-//     return `me ${rules[player]} / the house ${houseChoice} DRAW`;
-
-  if (rules[houseChoice] === player) {
-    winner === true
-
+  let winner;
+  if (player === houseChoice) {
+    winner = null;
+  } else if (rules[player] === houseChoice) {
+    winner = true;
   } else {
-    winner === false
- 
+    winner = false;
   }
 
-  return winner
+  return winner;
 };
 
 export const getHouseChoice = () => {

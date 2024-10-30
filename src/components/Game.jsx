@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CHOICES } from "../utils/data";
 
-const Game = ({ setMyChoice, setHouseChoice }) => {
+const Game = ({ setMyChoice, setHouseChoice, setHasWon, setScores }) => {
   const navigate = useNavigate();
 
   const handleChoice = (choice) => {
     setTimeout(() => {
       setMyChoice(choice);
       setHouseChoice("");
+      // setHasWon(null)
+      // setScores({ myScore: 0, houseScore: 0 })
       navigate("/choices");
     }, 1000);
   };
