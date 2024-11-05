@@ -45,7 +45,7 @@ function App() {
               <Result
                 myChoice={myChoice}
                 houseChoice={houseChoice}
-                setScore={setScores}
+                setScores={setScores}
                 setHasWon={setHasWon}
                 hasWon={hasWon}
               />

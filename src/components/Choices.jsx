@@ -17,7 +17,7 @@ const Choices = ({ myChoice, houseChoice, setHouseChoice }) => {
       clearTimeout(timeOut);
       clearTimeout(houseTimeout);
     };
-  }, [navigate]);
+  }, [setHouseChoice,navigate]);
 
   return (
     <div className="text-white flex justify-center gap-20 text-center ">

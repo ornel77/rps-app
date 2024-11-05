@@ -5,9 +5,9 @@ import { rules } from "../utils/rules";
 const Result = ({ myChoice, houseChoice, setHasWon, hasWon }) => {
   const navigate = useNavigate();
   useEffect(() => {
-    setHasWon(rules(myChoice, houseChoice))
+    setHasWon(rules(myChoice, houseChoice));
     // console.log(hasWon);
-  }, [])
+  }, [myChoice, houseChoice, setHasWon]);
   return (
     <div className="text-white flex justify-center gap-20 text-center items-center ">
       <section>
@@ -25,7 +25,13 @@ const Result = ({ myChoice, houseChoice, setHasWon, hasWon }) => {
         </div>
       </section>
       <section>
-        <p className="uppercase text-4xl mb-3">you win</p>
+        {hasWon === "draw" ? (
+          <p className="uppercase text-4xl mb-3">it's a draw</p>
+        ) : hasWon === "win" ? (
+          <p className="uppercase text-4xl mb-3">you win</p>
+        ) : (
+          <p className="uppercase text-4xl mb-3">you lost</p>
+        )}
         <button
           onClick={() => navigate("/")}
           className="uppercase text-xs tracking-widest text-darkText bg-white px-8 py-2 rounded-md font-bold"

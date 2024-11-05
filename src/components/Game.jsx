@@ -9,7 +9,7 @@ const Game = ({ setMyChoice, setHouseChoice, setHasWon, setScores }) => {
     setTimeout(() => {
       setMyChoice(choice);
       setHouseChoice("");
-      // setHasWon(null)
+      setHasWon(null)
       // setScores({ myScore: 0, houseScore: 0 })
       navigate("/choices");
     }, 1000);

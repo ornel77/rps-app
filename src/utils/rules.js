@@ -7,11 +7,11 @@ export const rules = (player, houseChoice) => {
 
   let winner;
   if (player === houseChoice) {
-    winner = null;
+    winner = "draw";
   } else if (rules[player] === houseChoice) {
-    winner = true;
+    winner = "win";
   } else {
-    winner = false;
+    winner = "lost";
   }
 
   return winner;
