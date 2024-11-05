@@ -4,14 +4,21 @@ import Game from "./components/Game";
 import Header from "./components/Header";
 import Rules from "./components/Rules";
 import Choices from "./components/Choices";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Result from "./components/Result";
 
 function App() {
   const [myChoice, setMyChoice] = useState("");
   const [houseChoice, setHouseChoice] = useState("");
-  const [scores, setScores] = useState({ myScore: 0, houseScore: 0 });
+  const [scores, setScores] = useState(() => {
+    const savedScores = localStorage.getItem("scores")
+    return savedScores ? JSON.parse(savedScores) : { myScore: 0, houseScore: 0 }
+  });
   const [hasWon, setHasWon] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem("scores", JSON.stringify(scores))
+  }, [scores])
 
   return (
     <div className="mx-auto">
