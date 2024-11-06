@@ -8,17 +8,28 @@ import { useEffect, useState } from "react";
 import Result from "./components/Result";
 
 function App() {
-  const [myChoice, setMyChoice] = useState("");
-  const [houseChoice, setHouseChoice] = useState("");
+  const [myChoice, setMyChoice] = useState(
+    localStorage.getItem("myChoice") || ""
+  );
+  const [houseChoice, setHouseChoice] = useState(
+    localStorage.getItem("houseChoice") || ""
+  );
   const [scores, setScores] = useState(() => {
-    const savedScores = localStorage.getItem("scores")
-    return savedScores ? JSON.parse(savedScores) : { myScore: 0, houseScore: 0 }
+    const savedScores = localStorage.getItem("scores");
+    return savedScores
+      ? JSON.parse(savedScores)
+      : { myScore: 0, houseScore: 0 };
   });
   const [hasWon, setHasWon] = useState(null);
 
   useEffect(() => {
-    localStorage.setItem("scores", JSON.stringify(scores))
-  }, [scores])
+    localStorage.setItem("scores", JSON.stringify(scores));
+  }, [scores]);
+
+  useEffect(() => {
+    localStorage.setItem("myChoice", myChoice);
+    localStorage.setItem("houseChoice", houseChoice);
+  }, [myChoice, houseChoice]);
 
   return (
     <div className="mx-auto">
@@ -60,7 +71,7 @@ function App() {
           />
         </Routes>
       </div>
-      <Rules />
+      <Rules setScores={setScores}/>
     </div>
   );
 }
